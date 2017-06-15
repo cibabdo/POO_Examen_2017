@@ -34,7 +34,7 @@ class Categorie
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
-    
+
     /**
      * plusieurs events pour une categorie
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Event", mappedBy="Categorie")
@@ -99,7 +99,7 @@ class Categorie
     {
         return $this->description;
     }
-    
+
     function getEvent() {
         return $this->event;
     }
@@ -107,11 +107,10 @@ class Categorie
     function setEvent($event) {
         $this->event = $event;
     }
-    
+
     public function __toString() {
        return $this->id.' '.$this->nom;
     }
 
 
 }
-

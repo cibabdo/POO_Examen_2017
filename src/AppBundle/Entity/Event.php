@@ -64,12 +64,6 @@ class Event {
      */
     private $categorie;
 
-    /**
-     * plusieurs utilisateurs pour plusieurs events
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User", mappedBy="Event")
-     *
-     */
-    private $user;
 
     /**
      * Get id
@@ -194,19 +188,10 @@ class Event {
         return $this->categorie;
     }
 
-    function getUser() {
-        return $this->user;
-    }
 
     function setCategorie(Categorie $categorie) {
         $this->categorie = $categorie;
     }
-
-    function setUser($user) {
-        $this->user = $user;
-    }
-
-
 
 
 }
