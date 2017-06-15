@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}AGENDA D'EVENEMENTS{% endblock %}</title>
+        {% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap-theme') }}">
+		{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+      <section>
+        {% block header %}
+        <h1>AGENDA D'EVENEMENT</h1>
+        {% endblock %}
+        {% block navbar %}
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="{{ path('event_list') }}">Event</a></li>
+                    <li><a href="{{ path('categorie_list') }}">Categorie</a></li>
+                </ul>
+            </div>
+        </nav>
+        {% endblock %}
+        {% for flash_message in app.session.flashBag.get('notice') %}
+        <div>
+            <button type="button" data-dismiss="alert" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+            </button>
+            <strong> {{ flash_message }}</strong>
+        </div>
+        {% endfor %}
+        <div>
+			       {% block main_content %}{% endblock %}
+        </div>
+      </section>
+    </body>
+</html>

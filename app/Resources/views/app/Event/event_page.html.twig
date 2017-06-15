@@ -1,0 +1,17 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block header %}<h1>AGENDA D'EVENEMENT</h1><br/><h2>Détails Event n°{{event.id}} - {{event.nom}}</h2>{% endblock %}
+
+{% block content %}
+  <br/>
+  <h3>N°: {{event.id}}</h3>
+  <p>Nom: {{event.nom}}</p>
+  <p>Description: {{event.description}}</p>
+  <p>Lieu: {{event.lieu}}</p>
+  <p>Début: {{event.debut | date('d M Y')}}</p>
+  <p>Fin: {{event.fin | date('d M Y')}}</p>
+  <p>Categorie: {{event.categorie}}</p>
+  <br/>
+  <h4><a href="{{path('event_update', {'id':event.id})}}">{{"UPDATE UN EVENT"}}</a> </h4>
+  
+{% endblock %}

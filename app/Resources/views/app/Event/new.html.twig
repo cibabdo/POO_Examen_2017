@@ -1,0 +1,11 @@
+{% extends 'app/layout.html.twig' %}
+
+{% block header %}<h1>AGENDA D'EVENEMENT</h1><br/><h2>Créez votre évenements</h2>{% endblock %}
+
+{% block content %}
+		<br/>
+		{{ form_start(eventForm) }}
+		{{ form_widget(eventForm) }}
+		{{ form_end(eventForm) }}
+	{#{% endif %}#}
+{% endblock %}

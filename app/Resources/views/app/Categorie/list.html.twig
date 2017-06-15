@@ -1,0 +1,15 @@
+{% extends "app/layout.html.twig" %}
+
+{% block header %}<h1>AGENDA D'EVENEMENT</h1><br/><h2>Liste des catégories</h2>{% endblock %}
+
+{% block content %}
+    <ol>
+        {% for a in categorie %}
+            <li>
+                <b><a href="{{path('categorie_show', {'id':a.id})}}">{{ a.nom }}</a></b>
+            </li>
+        {% endfor %}
+
+        <h4><a href="{{path('categorie_new')}}">{{"INSERER UNE CATEGORIE"}}</a> </h4>
+    </ol>
+{% endblock %}
